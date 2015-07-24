@@ -29,10 +29,6 @@ https://<host>/privacy_API?IntendedActivities=Processing&SubjectCountry=Croatia&
 {
     "assumptions": [
         "RecipientType = Corporation",
-        "Contents = {}",
-        "ProcessingPurposes = {}",
-        "CollectionPurposes = {}",
-        "Consents = {}",
         "StudentQ = False"
     ],
     "overallRisk": {
@@ -42,13 +38,25 @@ https://<host>/privacy_API?IntendedActivities=Processing&SubjectCountry=Croatia&
     },
     "regulationsChecked": [
         {
-            "name": "EU General Data Protection Directive (proposed)",
+            "name": "General Data Protection Directive (EU, proposed)",
+            "citation": "http://ec.europa.eu/justice/data-protection/document/review2012/com_2012_11_en.pdf",
             "applicable": true,
             "riskPercentage": 1.0,
             "riskFactors": [
                 "Art. 8 - Processing of personal data of a child",
                 "Art. 6 - Lawfulness of processing",
                 "Art. 33 - Data protection impact assessment"
+            ]
+        },
+        {
+            "name": "Children's Online Privacy Protection Act (U.S.)",
+            "citation": "16 C.F.R. Part 312",
+            "applicable": true,
+            "riskPercentage": 1.0,
+            "riskFactors": [
+                "Sec. 312.5 - Parental consent to collection, use, or disclosure of child's personal information",
+                "Sec. 312.6 - Right of parent to review personal information provided by a child",
+                "Sec. 312.4 - Obligation to provide notice to parent"
             ]
         }
     ],
