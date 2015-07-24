@@ -1,4 +1,4 @@
-# DataPrivacyComplianceAPI
+# Data Privacy Compliance API
 
 ## Project Overview
 
