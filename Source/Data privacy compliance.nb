@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    118221,       2895]
-NotebookOptionsPosition[    109717,       2613]
-NotebookOutlinePosition[    110130,       2631]
-CellTagsIndexPosition[    110087,       2628]
+NotebookDataLength[    136218,       3344]
+NotebookOptionsPosition[    125715,       2999]
+NotebookOutlinePosition[    126128,       3017]
+CellTagsIndexPosition[    126085,       3014]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -47,7 +47,7 @@ Basic web service inputs (see the API Definition section below for more \
 details):
 
   * The intended activities related to the data (e.g. publication, \
-processing, transmission, etc.)
+processing, transfer, etc.)
   * Facts about the person (\[OpenCurlyDoubleQuote]data subject\
 \[CloseCurlyDoubleQuote]) whose personal information is of concern
   * Facts about the data processor & controller
@@ -86,7 +86,8 @@ The goal is to keep the API response time under 50ms.\
    3.646072633372908*^9}, {3.6460731785885887`*^9, 3.646073210968872*^9}, {
    3.646073243191608*^9, 3.646073251608117*^9}, 3.6464908803994637`*^9, {
    3.646494165449421*^9, 3.646494184213088*^9}, {3.646564884306011*^9, 
-   3.646564889533063*^9}}]
+   3.646564889533063*^9}, 3.646669713351502*^9, {3.6466697665844517`*^9, 
+   3.646669766865759*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -121,12 +122,7 @@ Cell[BoxData[
         RowBox[{"<|", 
          RowBox[{
           RowBox[{"\"\<Interpreter\>\"", " ", "\[Rule]", " ", 
-           RowBox[{"AnySubset", "[", 
-            RowBox[{"{", 
-             RowBox[{
-             "\"\<Processing\>\"", ",", " ", "\"\<Transmission\>\"", ",", 
-              " ", "\"\<Publication\>\"", ",", " ", "\"\<Deletion\>\"", ",", 
-              " ", "\"\<Storage\>\""}], "}"}], "]"}]}], ",", 
+           RowBox[{"AnySubset", "[", "listOfActivities", "]"}]}], ",", 
           RowBox[{"\"\<Input\>\"", "\[Rule]", " ", 
            RowBox[{"{", "}"}]}], ",", 
           RowBox[{"\"\<Required\>\"", "\[Rule]", "False"}]}], "|>"}]}], ",", 
@@ -205,31 +201,7 @@ Cell[BoxData[
         RowBox[{"<|", 
          RowBox[{
           RowBox[{"\"\<Interpreter\>\"", " ", "\[Rule]", " ", 
-           RowBox[{"AnySubset", "[", 
-            RowBox[{"{", 
-             RowBox[{
-             "\"\<Address\>\"", ",", " ", 
-              "\"\<Authenticating information\>\"", ",", " ", 
-              "\"\<Biometric\>\"", ",", " ", "\"\<Civil legal judgment\>\"", 
-              ",", " ", "\"\<Criminal history\>\"", ",", " ", 
-              "\"\<Cultural data\>\"", ",", " ", "\"\<Date of birth\>\"", ",",
-               " ", "\"\<Economic data\>\"", ",", " ", 
-              "\"\<Financial data\>\"", ",", " ", 
-              "\"\<Financial messaging data\>\"", ",", " ", "\"\<Gender\>\"", 
-              ",", " ", "\"\<Genetic\>\"", ",", " ", "\"\<Health data\>\"", 
-              ",", " ", "\"\<IP address\>\"", ",", " ", "\"\<Name\>\"", ",", 
-              " ", "\"\<National identifier\>\"", ",", 
-              "\"\<Online identifier\>\"", ",", " ", 
-              "\"\<Organizational title\>\"", ",", " ", 
-              "\"\<Passenger name record\>\"", ",", " ", "\"\<Photograph\>\"",
-               ",", " ", "\"\<Political opinion\>\"", ",", " ", 
-              "\"\<Racial or ethnic origin\>\"", ",", " ", 
-              "\"\<Religious or other belief\>\"", ",", " ", 
-              "\"\<Sex life information\>\"", ",", " ", "\"\<Social data\>\"",
-               ",", " ", "\"\<Telephone number\>\"", ",", "\"\<Location\>\"", 
-              ",", " ", "\"\<Trade union membership\>\"", ",", " ", 
-              "\"\<Unique identifier\>\"", ",", " ", "\"\<Vehicle data\>\""}],
-              "}"}], "]"}]}], ",", 
+           RowBox[{"AnySubset", "[", "listOfContents", "]"}]}], ",", 
           RowBox[{"\"\<Input\>\"", "\[Rule]", " ", 
            RowBox[{"{", "}"}]}], ",", 
           RowBox[{"\"\<Required\>\"", "\[Rule]", "False"}]}], "|>"}]}], ",", 
@@ -268,14 +240,7 @@ Cell[BoxData[
         RowBox[{"<|", 
          RowBox[{
           RowBox[{"\"\<Interpreter\>\"", " ", "\[Rule]", " ", 
-           RowBox[{"AnySubset", "[", 
-            RowBox[{"{", 
-             RowBox[{
-             "\"\<Data subject consent\>\"", ",", " ", 
-              "\"\<Parental consent\>\"", ",", " ", 
-              "\"\<Data subject incapable of giving consent\>\"", ",", " ", 
-              "\"\<Data made public by data subject\>\""}], "}"}], "]"}]}], 
-          ",", 
+           RowBox[{"AnySubset", "[", "listOfConsentTypes", "]"}]}], ",", 
           RowBox[{"\"\<Input\>\"", "\[Rule]", " ", 
            RowBox[{"{", "}"}]}], ",", 
           RowBox[{"\"\<Required\>\"", "\[Rule]", "False"}]}], "|>"}]}], ",", 
@@ -299,11 +264,9 @@ Cell[BoxData[
        RowBox[{"\"\<Anonymization\>\"", "\[Rule]", " ", 
         RowBox[{"<|", 
          RowBox[{
-          RowBox[{"\"\<Interpreter\>\"", " ", "\[Rule]", " ", 
-           RowBox[{"{", 
-            RowBox[{
-            "\"\<Anonymized\>\"", ",", "\"\<Pseudonymized\>\"", ",", 
-             "\"\<Neither\>\""}], "}"}]}], ",", 
+          RowBox[{
+          "\"\<Interpreter\>\"", " ", "\[Rule]", "listOfAnonymizationTypes"}],
+           ",", 
           RowBox[{"\"\<Input\>\"", "\[Rule]", " ", "\"\<Neither\>\""}], ",", 
           RowBox[{"\"\<Required\>\"", "\[Rule]", "False"}]}], "|>"}]}]}], 
       "\[IndentingNewLine]", "}"}], ",", " ", "\[IndentingNewLine]", 
@@ -355,7 +318,10 @@ Cell[BoxData[
    3.6465724114601793`*^9, {3.64657244839151*^9, 3.646572454915522*^9}, {
    3.646572680381792*^9, 3.6465726821644497`*^9}, 3.646572938607875*^9, {
    3.646587268647299*^9, 3.646587276386084*^9}, {3.6465960413085403`*^9, 
-   3.646596048142962*^9}}],
+   3.646596048142962*^9}, {3.646669756499295*^9, 3.646669756993678*^9}, {
+   3.6466701470746517`*^9, 3.64667014910347*^9}, {3.646670402833982*^9, 
+   3.646670412458646*^9}, {3.646670456394869*^9, 3.6466705394605007`*^9}, 
+   3.64667058820752*^9}],
 
 Cell["\<\
 
@@ -365,14 +331,45 @@ Lists used in the API definition:\
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{"listOfActivities", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Collection\>\"", ",", "\"\<Processing\>\"", ",", " ", 
+     "\"\<Transfer\>\"", ",", " ", "\"\<Publication\>\"", ",", " ", 
+     "\"\<Deletion\>\"", ",", " ", "\"\<Storage\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"listOfEntityTypes", " ", "=", " ", 
    RowBox[{"{", 
     RowBox[{
     "\"\<Natural person\>\"", ",", " ", "\"\<Corporation\>\"", ",", " ", 
-     "\"\<National government\>\"", ",", " ", 
-     "\"\<Subnational government\>\"", ",", " ", 
+     "\"\<Nonprofit organization\>\"", ",", "\"\<National government\>\"", 
+     ",", " ", "\"\<Subnational government\>\"", ",", " ", 
      "\"\<Intergovernmental organization\>\"", ",", " ", 
      "\"\<Public communications network\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listOfContents", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Address\>\"", ",", " ", "\"\<Audio\>\"", ",", 
+     "\"\<Authenticating information\>\"", ",", " ", "\"\<Biometric\>\"", ",",
+      " ", "\"\<Civil legal judgment\>\"", ",", " ", 
+     "\"\<Criminal history\>\"", ",", " ", "\"\<Cultural data\>\"", ",", " ", 
+     "\"\<Date of birth\>\"", ",", " ", "\"\<Economic data\>\"", ",", " ", 
+     "\"\<Financial data\>\"", ",", " ", "\"\<Financial messaging data\>\"", 
+     ",", " ", "\"\<Gender\>\"", ",", " ", "\"\<Genetic\>\"", ",", " ", 
+     "\"\<Health data\>\"", ",", " ", "\"\<IP address\>\"", ",", " ", 
+     "\"\<Name\>\"", ",", " ", "\"\<National identifier\>\"", ",", 
+     "\"\<Online identifier\>\"", ",", " ", "\"\<Organizational title\>\"", 
+     ",", " ", "\"\<Passenger name record\>\"", ",", " ", 
+     "\"\<Photograph\>\"", ",", " ", "\"\<Political opinion\>\"", ",", " ", 
+     "\"\<Racial or ethnic origin\>\"", ",", " ", 
+     "\"\<Religious or other belief\>\"", ",", " ", 
+     "\"\<Sex life information\>\"", ",", " ", "\"\<Social data\>\"", ",", 
+     " ", "\"\<Telephone number\>\"", ",", "\"\<Location\>\"", ",", " ", 
+     "\"\<Trade union membership\>\"", ",", " ", "\"\<Unique identifier\>\"", 
+     ",", " ", "\"\<Vehicle data\>\"", ",", "\"\<Video\>\""}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"listOfPurposes", " ", "=", " ", 
@@ -400,11 +397,29 @@ Cell[BoxData[{
      "\"\<Statistical\>\"", ",", " ", "\"\<Surveillance\>\"", ",", " ", 
      "\"\<Telecommunications\>\"", ",", " ", 
      "\"\<Vital interests of the data subject\>\"", ",", 
-     "\"\<Vital interests of third party\>\""}], "}"}]}], ";"}]}], "Input",
+     "\"\<Vital interests of third party\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listOfConsentTypes", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Data subject consent\>\"", ",", " ", "\"\<Parental consent\>\"", ",",
+      " ", "\"\<Data subject incapable of giving consent\>\"", ",", " ", 
+     "\"\<Data made public by data subject\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listOfAnonymizationTypes", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Anonymized\>\"", ",", "\"\<Pseudonymized\>\"", ",", 
+     "\"\<Neither\>\""}], "}"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.646037987318502*^9, 3.646037996169753*^9}, 
    3.646038873913888*^9, {3.646039167712737*^9, 3.64603920206973*^9}, {
-   3.646588770569372*^9, 3.6465887728306637`*^9}}],
+   3.646588770569372*^9, 3.6465887728306637`*^9}, {3.646668752388625*^9, 
+   3.6466687567885647`*^9}, {3.6466704443809023`*^9, 3.646670490101985*^9}, {
+   3.6466705217096767`*^9, 3.6466705334479094`*^9}, {3.64667056645255*^9, 
+   3.6466705807927837`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -415,6 +430,7 @@ Cell[BoxData[
       RowBox[{"\"\<Countries\>\"", ",", " ", "\"\<Name\>\""}], "]"}], ",", 
      RowBox[{"{", "\"\<European Union\>\"", "}"}]}], "]"}]}], ";"}]], "Input",\
 
+ InitializationCell->True,
  CellChangeTimes->{{3.646586857971653*^9, 3.646586863199654*^9}, {
    3.6465871684459963`*^9, 3.6465872145443163`*^9}, 3.646587255174223*^9}],
 
@@ -898,8 +914,8 @@ Cell[BoxData[
        RowBox[{"AbsoluteTime", "[", "]"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"regsChecked", " ", "=", " ", 
-       RowBox[{
-       "{", "\[IndentingNewLine]", "riskReportEUGDPR", " ", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{"riskReportEUGDPR", " ", ",", "riskReportCOPPA"}], 
         "\[IndentingNewLine]", "}"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"risk", " ", "=", " ", 
@@ -1033,7 +1049,10 @@ Cell[BoxData[
    3.646570527316668*^9, 3.64657052814439*^9}, 3.646572278549464*^9, 
    3.646572958768615*^9, 3.646596234827816*^9, {3.646596304817123*^9, 
    3.64659630622432*^9}, {3.6465963421797333`*^9, 3.646596357387299*^9}, {
-   3.646600688928369*^9, 3.6466006892702007`*^9}}],
+   3.646600688928369*^9, 3.6466006892702007`*^9}, {3.6466706488038673`*^9, 
+   3.64667064913021*^9}, {3.646687230347183*^9, 3.6466872398241873`*^9}, {
+   3.646687344231784*^9, 3.6466873477387533`*^9}, {3.646688190526144*^9, 
+   3.646688190811619*^9}}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.645619449453641*^9, 3.6456194498161507`*^9}}]
@@ -1229,8 +1248,9 @@ Protection Directive (proposed)\[CloseCurlyDoubleQuote], \
 Cell[BoxData[
  RowBox[{
   RowBox[{"riskReport", "[", 
-   RowBox[{"riskFactors_", ",", "regName_", ",", " ", "applicable_"}], " ", 
-   "]"}], " ", ":=", " ", 
+   RowBox[{
+   "riskFactors_", ",", "regName_", ",", " ", "citation_", ",", 
+    "applicable_"}], " ", "]"}], " ", ":=", " ", 
   RowBox[{"Block", "[", 
    RowBox[{
     RowBox[{"{", "factors", "}"}], ",", "\[IndentingNewLine]", 
@@ -1245,6 +1265,8 @@ Cell[BoxData[
       RowBox[{"<|", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{"\"\<name\>\"", "\[Rule]", " ", "regName"}], ",", " ", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<citation\>\"", "\[Rule]", " ", "citation"}], ",", " ", 
         "\[IndentingNewLine]", 
         RowBox[{"\"\<applicable\>\"", "\[Rule]", " ", "applicable"}], ",", 
         "\[IndentingNewLine]", 
@@ -1271,7 +1293,8 @@ Cell[BoxData[
    3.6465046590427847`*^9, 3.6465046748470497`*^9}, {3.646504779220552*^9, 
    3.6465048170905447`*^9}, {3.646505029101122*^9, 3.646505030527471*^9}, {
    3.6465051095378447`*^9, 3.6465051161301603`*^9}, {3.646505208793971*^9, 
-   3.646505210662261*^9}, 3.646505249823782*^9}],
+   3.646505210662261*^9}, 3.646505249823782*^9, {3.646677501538554*^9, 
+   3.646677516321476*^9}}],
 
 Cell[BoxData[
  RowBox[{"SetAttributes", "[", 
@@ -1690,11 +1713,11 @@ Cell[BoxData[{
       RowBox[{"processingForAny", "[", 
        RowBox[{"{", 
         RowBox[{"\"\<Marketing\>\"", ",", "\"\<Surveillance\>\""}], "}"}], 
-       "]"}]}], " ", ")"}]}]}], "  ", "\[IndentingNewLine]", "\n", 
+       "]"}]}], " ", ")"}]}]}], "  ", "\n", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"Art", ".", " ", "3"}], 
-    RowBox[{"(", "3", ")"}]}], " ", "*)"}]}], "\n", 
+    RowBox[{"(", "3", ")"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"(*", " ", 
    RowBox[{
@@ -2550,8 +2573,10 @@ Cell[BoxData[
   RowBox[{"riskReport", "[", "\[IndentingNewLine]", 
    RowBox[{
    "riskAnalysisEUGDPR", " ", ",", "\[IndentingNewLine]", 
-    "\"\<EU General Data Protection Directive (proposed)\>\"", ",", 
+    "\"\<General Data Protection Directive (EU, proposed)\>\"", ",", 
     "\[IndentingNewLine]", 
+    "\"\<http://ec.europa.eu/justice/data-protection/document/review2012/com_\
+2012_11_en.pdf\>\"", ",", "\[IndentingNewLine]", 
     RowBox[{
     "applicableSubjectMatterEUGDPR", "  ", "&&", " ", 
      "withinMaterialScopeEUGDPR", "  ", "&&", " ", 
@@ -2559,8 +2584,11 @@ Cell[BoxData[
    "]"}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.646492751857113*^9, 3.64649279885643*^9}, {
-  3.646504718518093*^9, 3.64650472511312*^9}, {3.646586591709156*^9, 
-  3.646586592598647*^9}, {3.646587848934412*^9, 3.646587857805326*^9}}],
+   3.646504718518093*^9, 3.64650472511312*^9}, {3.646586591709156*^9, 
+   3.646586592598647*^9}, {3.646587848934412*^9, 3.646587857805326*^9}, {
+   3.6466775524785023`*^9, 3.6466775573474894`*^9}, {3.646677644298994*^9, 
+   3.64667765122761*^9}, 3.6466864343594217`*^9, {3.646688328377727*^9, 
+   3.646688336379754*^9}}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.645998570631082*^9, 3.6459985709083033`*^9}}]
@@ -2604,15 +2632,373 @@ Cell["United Kingdom", "Section",
   3.645620952952984*^9}},
  CellID->1986318581],
 
+Cell[CellGroupData[{
+
 Cell["United States", "Section",
  CellChangeTimes->{{3.645620549240179*^9, 3.645620571793406*^9}, {
   3.645620767291108*^9, 3.6456207695161877`*^9}},
- CellID->1054874149]
+ CellID->1054874149],
+
+Cell[CellGroupData[{
+
+Cell["Common functions", "Subsection",
+ CellChangeTimes->{{3.645997633343616*^9, 3.645997638265903*^9}}],
+
+Cell["U.S. territories:", "Text",
+ CellChangeTimes->{{3.645814976355694*^9, 3.6458149843788557`*^9}, 
+   3.645988206416581*^9, 3.6459931811711187`*^9, {3.646667414859687*^9, 
+   3.646667418082528*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"usTerritoryQ", "[", "c_", "]"}], " ", ":=", " ", 
+   RowBox[{"MemberQ", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Puerto Rico\>\"", ",", "\"\<Guam\>\"", ",", 
+       "\"\<Northern Mariana Islands\>\"", ",", 
+       "\"\<United States Virgin Islands\>\"", ",", 
+       "\"\<American Samoa\>\""}], "}"}], ",", "c"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"usOrUSTerritoryQ", "[", "c_", "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"c", " ", "\[Equal]", " ", "\"\<United States\>\""}], " ", "||", 
+    " ", 
+    RowBox[{"usTerritoryQ", "[", "c", "]"}]}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.645814670609407*^9, 3.64581492039155*^9, 3.645815089017864*^9, {
+   3.6466678431453342`*^9, 3.646667849302929*^9}, {3.646667880689445*^9, 
+   3.646667908967059*^9}, {3.646667956121976*^9, 3.646667966214527*^9}, {
+   3.646669127537756*^9, 3.646669151681403*^9}, {3.64668703916781*^9, 
+   3.646687070744021*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Children\[CloseCurlyQuote]s Online Privacy Protection Act, 16 C.F.R. \
+Part 312", "Subsection",
+ CellChangeTimes->{{3.645997633343616*^9, 3.645997638265903*^9}, {
+  3.6466674399607964`*^9, 3.646667450080618*^9}, {3.646667502935108*^9, 
+  3.646667513290655*^9}, {3.6466680386515017`*^9, 3.646668039338272*^9}}],
+
+Cell["See also 15 U.S.C. 6501 et seq.", "Text",
+ CellChangeTimes->{{3.6466688637282667`*^9, 3.6466688755434923`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Applicability", "Subsubsection",
+ CellChangeTimes->{{3.64666807977582*^9, 3.6466680875094757`*^9}}],
+
+Cell["\<\
+See en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act:\
+\>", "Text",
+ CellChangeTimes->{{3.646677102428781*^9, 3.646677112020837*^9}, 
+   3.646688456597674*^9}],
+
+Cell[BoxData[
+ RowBox[{"appliesCOPPA", " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"activityDate", " ", "\[GreaterEqual]", " ", 
+    RowBox[{"DateObject", "[", 
+     RowBox[{"{", 
+      RowBox[{"2000", ",", "4", ",", "21"}], "}"}], "]"}]}], " ", "&&", " ", 
+   "coppaRequirementsApply"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6466680907383757`*^9, 3.646668139768258*^9}, {
+   3.6466684051010637`*^9, 3.6466684203760653`*^9}, {3.646668576090774*^9, 
+   3.646668579088567*^9}, {3.64666860933862*^9, 3.646668621533637*^9}, {
+   3.646668680471897*^9, 3.6466687294641857`*^9}, {3.646668786086491*^9, 
+   3.6466688176223288`*^9}, {3.646669024117536*^9, 3.6466690432799187`*^9}, {
+   3.6466690841064873`*^9, 3.646669090683137*^9}, {3.646669169487335*^9, 
+   3.646669247641531*^9}, {3.646669294466967*^9, 3.646669299543357*^9}, {
+   3.6466713659575977`*^9, 3.646671366445594*^9}, {3.646671410005275*^9, 
+   3.646671416802539*^9}, 3.646676537991211*^9, {3.646677114879928*^9, 
+   3.646677119584174*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sec. 312.2 - Definitions", "Subsubsection",
+ CellChangeTimes->{{3.646669426753408*^9, 3.646669427881331*^9}, {
+  3.646669470994013*^9, 3.646669478777954*^9}}],
+
+Cell["\[OpenCurlyDoubleQuote]Child\[CloseCurlyDoubleQuote]:", "Text",
+ CellChangeTimes->{{3.646671214243409*^9, 3.646671219430481*^9}, {
+  3.6466712617979116`*^9, 3.646671261890047*^9}}],
+
+Cell[BoxData[
+ RowBox[{"coppaChild", ":=", " ", 
+  RowBox[{"subjectAge", " ", "<", " ", "13"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.646669432951239*^9, 3.646669457500476*^9}, {
+  3.6466707327545977`*^9, 3.646670735444808*^9}}],
+
+Cell["\<\
+From the definitions of \[OpenCurlyDoubleQuote]collection\
+\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]disclosure,\
+\[CloseCurlyDoubleQuote] and from 312.1:\
+\>", "Text",
+ CellChangeTimes->{{3.646670201121585*^9, 3.646670238810842*^9}}],
+
+Cell[BoxData[
+ RowBox[{"coppaActivities", ":=", " ", 
+  RowBox[{"activitiesAreAny", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Collection\>\"", ",", "\"\<Publication\>\"", ",", 
+     "\"\<Transfer\>\""}], "}"}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6466696444692173`*^9, 3.646669696441318*^9}, {
+   3.646669883026951*^9, 3.6466698873976*^9}, {3.6466702468905354`*^9, 
+   3.646670248083788*^9}, 3.646670741958366*^9, {3.646671177693771*^9, 
+   3.646671179193668*^9}}],
+
+Cell["\[OpenCurlyDoubleQuote]Operator,\[CloseCurlyDoubleQuote] construed \
+broadly:", "Text",
+ CellChangeTimes->{{3.646671253805277*^9, 3.646671257334733*^9}, {
+  3.64667129280993*^9, 3.6466712959421253`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"coppaOperator", " ", ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"usOrUSTerritoryQ", "[", "processorCountry", "]"}], " ", "||", 
+     " ", 
+     RowBox[{"usOrUSTerritoryQ", "[", "controllerCountry", "]"}], " ", "||", 
+     " ", 
+     RowBox[{"usOrUSTerritoryQ", "[", "subjectCountry", "]"}]}], ")"}], " ", "&&",
+    " ", 
+   RowBox[{
+   "processorType", " ", "\[Equal]", "  ", 
+    "\"\<Corporation\>\""}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6466712693428993`*^9, 3.646671273868395*^9}, {
+   3.646671305467536*^9, 3.646671345551034*^9}, 3.6466871141050653`*^9, 
+   3.646687914106234*^9}],
+
+Cell["\[OpenCurlyDoubleQuote]Personal information\[CloseCurlyDoubleQuote]:", \
+"Text",
+ CellChangeTimes->{{3.646671202241235*^9, 3.646671207563506*^9}, {
+  3.6466712670195312`*^9, 3.64667126728397*^9}}],
+
+Cell[BoxData[
+ RowBox[{"coppaPII", " ", ":=", " ", 
+  RowBox[{"contentIsAny", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Address\>\"", ",", "\"\<Audio\>\"", ",", 
+     "\"\<Authenticating information\>\"", ",", "\"\<Biometric\>\"", ",", 
+     "\"\<Cultural data\>\"", ",", "\"\<Date of birth\>\"", ",", 
+     "\"\<Gender\>\"", ",", "\"\<Health data\>\"", ",", "\"\<IP address\>\"", 
+     ",", "\"\<Name\>\"", ",", "\"\<National identifier\>\"", ",", 
+     "\"\<Online identifier\>\"", ",", "\"\<Photograph\>\"", ",", 
+     "\"\<Racial or ethnic origin\>\"", ",", 
+     "\"\<Religious or other belief\>\"", ",", "\"\<Social data\>\"", ",", 
+     "\"\<Telephone number\>\"", ",", "\"\<Location\>\"", ",", 
+     "\"\<Unique identifier\>\"", ",", "\"\<Video\>\""}], "}"}], 
+   "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.646670711669943*^9, 3.6466708669475603`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Sec. 312.3 - Collection, use, and/or disclosure of personal information from \
+and about children on the Internet\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.6466709095793037`*^9, 3.646670955369986*^9}}],
+
+Cell[BoxData[
+ RowBox[{"coppaRequirementsApply", " ", ":=", " ", 
+  RowBox[{
+  "coppaChild", " ", "&&", " ", "coppaActivities", " ", "&&", " ", 
+   "coppaOperator", "  ", "&&", " ", "coppaPII", " "}]}]], "Input",
+ CellChangeTimes->{{3.646671140986784*^9, 3.646671148480253*^9}, {
+  3.646675993012467*^9, 3.6466760324231157`*^9}, {3.6466762260010233`*^9, 
+  3.6466762269944057`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sec. 312.4 - Notice", "Subsubsection",
+ CellChangeTimes->{{3.6466760666801033`*^9, 3.646676072918954*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mustNotifyUnderCOPPAsec4", " ", "=", " ", "True"}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.646676252926647*^9, 3.646676261345992*^9}, {
+   3.6466765656902533`*^9, 3.6466765958926277`*^9}, 3.6466770386993237`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sec. 312.5 - Parental consent", "Subsubsection",
+ CellChangeTimes->{{3.6466760930574503`*^9, 3.646676098995229*^9}}],
+
+Cell[BoxData[
+ RowBox[{"compliesCOPPAsec5", " ", ":=", " ", 
+  RowBox[{"parentalConsent", " ", "||", " ", 
+   RowBox[{"processingForAny", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Criminal procedure\>\"", ",", "\"\<Law enforcement\>\"", ",", 
+      "\"\<National security\>\"", ",", "\"\<Public security\>\""}], "}"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.646676169413775*^9, 3.64667618324439*^9}, 
+   3.6466762238002234`*^9, {3.646676869194335*^9, 3.64667690827943*^9}, {
+   3.646676960751192*^9, 3.646676972968989*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Sec. 312.6 - Right of parent to review personal information provided by a \
+child\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.646676111204793*^9, 3.646676125295594*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mustAllowReviewUnderCOPPAsec6", " ", "=", " ", "True"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6466766047164793`*^9, 3.646676608274157*^9}, 
+   3.646676725572403*^9, 3.646677041697193*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sec. 312.10 - Data retention and deletion requirements", "Subsubsection",
+ CellChangeTimes->{{3.646676138272813*^9, 3.646676149595992*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mustDeleteUnderCOPPAsec10", " ", ":=", " ", 
+  RowBox[{"activityIs", "[", "\"\<Storage\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.646677289238628*^9, 3.6466773104838333`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Risk analysis", "Subsubsection",
+ CellChangeTimes->{{3.64649159843496*^9, 3.646491611697775*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"riskAnalysisCOPPA", ":=", " ", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Outright", " ", "violations"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", "compliesCOPPAsec5"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", 
+           "\"\<Sec. 312.5 - Parental consent to collection, use, or \
+disclosure of child's personal information\>\""}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Mere", " ", "risks"}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"mustNotifyUnderCOPPAsec4", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0.3", ",", 
+           "\"\<Sec. 312.4 - Obligation to provide notice to parent\>\""}], 
+          "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"mustAllowReviewUnderCOPPAsec6", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0.3", ",", 
+           "\"\<Sec. 312.6 - Right of parent to review personal information \
+provided by a child\>\""}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"mustDeleteUnderCOPPAsec10", " ", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0.1", ",", 
+           "\"\<Sec. 312.10 - Obligation to retain data for only as long as \
+reasonably necessary\>\""}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "}"}], ",", " ", "Null"}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.644836815809553*^9, 3.6448368179786882`*^9}, {
+   3.644844583954937*^9, 3.644844587619371*^9}, {3.644844739707883*^9, 
+   3.644844774675818*^9}, {3.644844841985259*^9, 3.6448448566393843`*^9}, {
+   3.64484502546955*^9, 3.64484516312206*^9}, {3.644845226158826*^9, 
+   3.644845291534335*^9}, {3.6448457770717773`*^9, 3.644845838415386*^9}, {
+   3.644846401697742*^9, 3.644846499089821*^9}, {3.644846542039991*^9, 
+   3.6448465792674313`*^9}, {3.644846611432538*^9, 3.644846863874113*^9}, {
+   3.644846925242003*^9, 3.6448469741025*^9}, {3.644847017305275*^9, 
+   3.6448470942409678`*^9}, {3.644847137550461*^9, 3.6448471479868813`*^9}, {
+   3.6448471945635777`*^9, 3.6448472359255743`*^9}, {3.6448472828052263`*^9, 
+   3.6448474081858053`*^9}, 3.644847482217268*^9, {3.6448526625078917`*^9, 
+   3.6448527220445833`*^9}, {3.644852805815423*^9, 3.644852879443945*^9}, {
+   3.645185951497513*^9, 3.645185953111906*^9}, {3.645187530041457*^9, 
+   3.6451875435738907`*^9}, 3.64518762925675*^9, {3.645187672953146*^9, 
+   3.6451877000265827`*^9}, {3.645187748974332*^9, 3.6451877520145187`*^9}, {
+   3.645187955910469*^9, 3.64518795934538*^9}, {3.645189551416204*^9, 
+   3.645189582092209*^9}, {3.6451896280790567`*^9, 3.645189702650764*^9}, {
+   3.645192324345559*^9, 3.6451923439730167`*^9}, 3.645192482236207*^9, {
+   3.645192951828541*^9, 3.64519301568187*^9}, {3.645193052189189*^9, 
+   3.645193083175956*^9}, {3.645193124318417*^9, 3.645193319566761*^9}, {
+   3.645193409440569*^9, 3.645193447888287*^9}, {3.6451935023459473`*^9, 
+   3.645193525198255*^9}, {3.645193566801429*^9, 3.645193573582521*^9}, {
+   3.645618642649796*^9, 3.645618644840931*^9}, {3.6456187278515997`*^9, 
+   3.645618782419726*^9}, {3.6464917032397223`*^9, 3.646491709291293*^9}, {
+   3.646491766510257*^9, 3.646492007947715*^9}, {3.6465008980355873`*^9, 
+   3.6465010288728447`*^9}, {3.646588513841414*^9, 3.646588529766794*^9}, {
+   3.6465893131224203`*^9, 3.646589329109832*^9}, {3.6465897100372057`*^9, 
+   3.646589748877302*^9}, 3.646589781038731*^9, {3.646591597787654*^9, 
+   3.646591622748022*^9}, {3.646597140125063*^9, 3.646597173315956*^9}, {
+   3.646597232829002*^9, 3.646597260280115*^9}, {3.6466003156591053`*^9, 
+   3.6466003213192368`*^9}, {3.64666755506522*^9, 3.646667556241871*^9}, {
+   3.6466685105958967`*^9, 3.6466685175997343`*^9}, {3.646676622965127*^9, 
+   3.646676744564365*^9}, {3.646676780421534*^9, 3.646676803585024*^9}, {
+   3.646677337819828*^9, 3.646677358704788*^9}, {3.646677437167571*^9, 
+   3.646677451293429*^9}}],
+
+Cell[BoxData[
+ RowBox[{"riskReportCOPPA", " ", ":=", " ", 
+  RowBox[{"riskReport", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "riskAnalysisCOPPA", " ", ",", "\[IndentingNewLine]", 
+    "\"\<Children's Online Privacy Protection Act (U.S.)\>\"", ",", 
+    "\[IndentingNewLine]", "\"\<16 C.F.R. Part 312\>\"", ",", 
+    "\[IndentingNewLine]", "appliesCOPPA"}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.646492751857113*^9, 3.64649279885643*^9}, {
+  3.646504718518093*^9, 3.64650472511312*^9}, {3.646586591709156*^9, 
+  3.646586592598647*^9}, {3.646587848934412*^9, 3.646587857805326*^9}, {
+  3.646668526257699*^9, 3.646668556527981*^9}, {3.6466775363584146`*^9, 
+  3.646677545596696*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.645998570631082*^9, 3.6459985709083033`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.645997689298176*^9, 3.645997689617867*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1328, 1002},
-WindowMargins->{{Automatic, -1340}, {Automatic, 0}},
+WindowSize->{1327, 1002},
+WindowMargins->{{Automatic, -1339}, {Automatic, 0}},
 PrintingCopies->1,
 PrintingPageRange->{1, Automatic},
 FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
@@ -2637,264 +3023,327 @@ Cell[712, 27, 248, 3, 65, "Chapter"],
 Cell[CellGroupData[{
 Cell[985, 34, 113, 2, 64, "Section",
  CellID->1862578396],
-Cell[1101, 38, 2301, 50, 562, "Text"]
+Cell[1101, 38, 2371, 51, 562, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3439, 93, 101, 2, 64, "Section",
+Cell[3509, 94, 101, 2, 64, "Section",
  CellID->37],
 Cell[CellGroupData[{
-Cell[3565, 99, 100, 1, 44, "Subsection"],
-Cell[3668, 102, 406, 8, 30, "Text"],
-Cell[4077, 112, 12919, 245, 658, "Input",
+Cell[3635, 100, 100, 1, 44, "Subsection"],
+Cell[3738, 103, 406, 8, 30, "Text"],
+Cell[4147, 113, 11048, 210, 539, "Input",
  InitializationCell->True],
-Cell[16999, 359, 123, 4, 49, "Text"],
-Cell[17125, 365, 2238, 41, 165, "Input",
+Cell[15198, 325, 123, 4, 49, "Text"],
+Cell[15324, 331, 4730, 90, 301, "Input",
  InitializationCell->True],
-Cell[19366, 408, 440, 10, 28, "Input"],
-Cell[19809, 420, 94, 1, 28, "Input"]
+Cell[20057, 423, 467, 11, 28, "Input",
+ InitializationCell->True],
+Cell[20527, 436, 94, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19940, 426, 98, 1, 44, "Subsection"],
-Cell[20041, 429, 222, 3, 30, "Text"],
-Cell[20266, 434, 516, 10, 28, "Input"],
-Cell[20785, 446, 767, 13, 28, "Input"],
-Cell[21555, 461, 92, 1, 28, "Input"]
+Cell[20658, 442, 98, 1, 44, "Subsection"],
+Cell[20759, 445, 222, 3, 30, "Text"],
+Cell[20984, 450, 516, 10, 28, "Input"],
+Cell[21503, 462, 767, 13, 28, "Input"],
+Cell[22273, 477, 92, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21684, 467, 103, 1, 44, "Subsection"],
-Cell[21790, 470, 874, 14, 69, "Text"],
-Cell[22667, 486, 139, 2, 30, "Text"],
-Cell[22809, 490, 3070, 72, 318, "Input",
+Cell[22402, 483, 103, 1, 44, "Subsection"],
+Cell[22508, 486, 874, 14, 69, "Text"],
+Cell[23385, 502, 139, 2, 30, "Text"],
+Cell[23527, 506, 3070, 72, 318, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25916, 567, 176, 2, 44, "Subsection"],
-Cell[26095, 571, 125, 2, 30, "Text"],
-Cell[26223, 575, 295, 7, 28, "Input",
+Cell[26634, 583, 176, 2, 36, "Subsection"],
+Cell[26813, 587, 125, 2, 30, "Text"],
+Cell[26941, 591, 295, 7, 28, "Input",
  InitializationCell->True],
-Cell[26521, 584, 279, 6, 49, "Text"],
-Cell[26803, 592, 12101, 268, 947, "Input",
+Cell[27239, 600, 279, 6, 49, "Text"],
+Cell[27521, 608, 12101, 268, 947, "Input",
  InitializationCell->True],
-Cell[38907, 862, 92, 1, 28, "Input"]
+Cell[39625, 878, 92, 1, 28, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39048, 869, 169, 3, 64, "Section",
+Cell[39766, 885, 169, 3, 64, "Section",
  CellID->922705572],
 Cell[CellGroupData[{
-Cell[39242, 876, 106, 1, 44, "Subsection"],
-Cell[39351, 879, 270, 3, 30, "Text"],
-Cell[39624, 884, 9352, 151, 505, "Input",
+Cell[39960, 892, 106, 1, 44, "Subsection"],
+Cell[40069, 895, 270, 3, 30, "Text"],
+Cell[40342, 900, 9588, 154, 505, "Input",
  InitializationCell->True],
-Cell[48979, 1037, 94, 1, 28, "Input"]
+Cell[49933, 1056, 94, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49110, 1043, 121, 1, 44, "Subsection"],
-Cell[49234, 1046, 91, 1, 30, "Text"],
-Cell[49328, 1049, 464, 10, 63, "Input"],
+Cell[50064, 1062, 121, 1, 44, "Subsection"],
+Cell[50188, 1065, 91, 1, 30, "Text"],
+Cell[50282, 1068, 464, 10, 63, "Input"],
 Cell[CellGroupData[{
-Cell[49817, 1063, 217, 4, 28, "Input"],
-Cell[50037, 1069, 97, 1, 28, "Output"]
+Cell[50771, 1082, 217, 4, 28, "Input"],
+Cell[50991, 1088, 97, 1, 28, "Output"]
 }, Open  ]],
-Cell[50149, 1073, 92, 1, 28, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[50278, 1079, 225, 3, 44, "Subsection"],
-Cell[50506, 1084, 109, 1, 30, "Text"],
-Cell[50618, 1087, 598, 14, 28, "Input"],
-Cell[51219, 1103, 727, 22, 51, "Text"],
-Cell[51949, 1127, 608, 17, 28, "Input",
- InitializationCell->True],
-Cell[CellGroupData[{
-Cell[52582, 1148, 219, 3, 28, "Input"],
-Cell[52804, 1153, 209, 3, 28, "Output"]
-}, Open  ]],
-Cell[53028, 1159, 145, 4, 49, "Text"],
-Cell[53176, 1165, 432, 12, 28, "Input",
- InitializationCell->True],
-Cell[53611, 1179, 158, 4, 49, "Text"],
-Cell[53772, 1185, 468, 12, 28, "Input",
- InitializationCell->True],
-Cell[54243, 1199, 203, 3, 28, "Input"],
-Cell[54449, 1204, 94, 1, 28, "Input"]
+Cell[51103, 1092, 92, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54580, 1210, 285, 3, 44, "Subsection"],
-Cell[54868, 1215, 730, 11, 30, "Text"],
-Cell[55601, 1228, 2170, 45, 182, "Input",
+Cell[51232, 1098, 225, 3, 44, "Subsection"],
+Cell[51460, 1103, 109, 1, 30, "Text"],
+Cell[51572, 1106, 598, 14, 28, "Input"],
+Cell[52173, 1122, 727, 22, 51, "Text"],
+Cell[52903, 1146, 608, 17, 28, "Input",
  InitializationCell->True],
-Cell[57774, 1275, 133, 3, 28, "Input",
+Cell[CellGroupData[{
+Cell[53536, 1167, 219, 3, 28, "Input"],
+Cell[53758, 1172, 209, 3, 28, "Output"]
+}, Open  ]],
+Cell[53982, 1178, 145, 4, 49, "Text"],
+Cell[54130, 1184, 432, 12, 28, "Input",
  InitializationCell->True],
-Cell[57910, 1280, 94, 1, 28, "Input"]
+Cell[54565, 1198, 158, 4, 49, "Text"],
+Cell[54726, 1204, 468, 12, 28, "Input",
+ InitializationCell->True],
+Cell[55197, 1218, 203, 3, 28, "Input"],
+Cell[55403, 1223, 94, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[58041, 1286, 254, 3, 44, "Subsection"],
-Cell[58298, 1291, 233, 5, 30, "Text"],
-Cell[58534, 1298, 1658, 34, 148, "Input",
+Cell[55534, 1229, 285, 3, 36, "Subsection"],
+Cell[55822, 1234, 730, 11, 30, "Text"],
+Cell[56555, 1247, 2352, 49, 199, "Input",
+ InitializationCell->True],
+Cell[58910, 1298, 133, 3, 28, "Input",
+ InitializationCell->True],
+Cell[59046, 1303, 94, 1, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59177, 1309, 254, 3, 36, "Subsection"],
+Cell[59434, 1314, 233, 5, 30, "Text"],
+Cell[59670, 1321, 1658, 34, 148, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60241, 1338, 264, 4, 64, "Section",
+Cell[61377, 1361, 264, 4, 64, "Section",
  CellID->721663169],
 Cell[CellGroupData[{
-Cell[60530, 1346, 148, 2, 44, "Subsection"],
-Cell[60681, 1350, 705, 15, 28, "Input",
+Cell[61666, 1369, 148, 2, 44, "Subsection"],
+Cell[61817, 1373, 705, 15, 28, "Input",
  InitializationCell->True],
-Cell[61389, 1367, 107, 4, 49, "Text"],
-Cell[61499, 1373, 964, 25, 80, "Input",
+Cell[62525, 1390, 107, 4, 49, "Text"],
+Cell[62635, 1396, 964, 25, 80, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62500, 1403, 98, 1, 44, "Subsection"],
-Cell[62601, 1406, 102, 1, 30, "Text"],
-Cell[62706, 1409, 531, 14, 46, "Input",
+Cell[63636, 1426, 98, 1, 44, "Subsection"],
+Cell[63737, 1429, 102, 1, 30, "Text"],
+Cell[63842, 1432, 531, 14, 46, "Input",
  InitializationCell->True],
-Cell[63240, 1425, 92, 1, 28, "Input"],
-Cell[63335, 1428, 103, 1, 30, "Text"],
-Cell[63441, 1431, 683, 16, 46, "Input",
+Cell[64376, 1448, 92, 1, 28, "Input"],
+Cell[64471, 1451, 103, 1, 30, "Text"],
+Cell[64577, 1454, 683, 16, 46, "Input",
  InitializationCell->True],
-Cell[64127, 1449, 155, 5, 49, "Text"],
-Cell[64285, 1456, 852, 18, 46, "Input",
+Cell[65263, 1472, 155, 5, 49, "Text"],
+Cell[65421, 1479, 852, 18, 46, "Input",
  InitializationCell->True],
-Cell[65140, 1476, 92, 1, 28, "Input"]
+Cell[66276, 1499, 92, 1, 28, "Input"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[65293, 1484, 201, 3, 65, "Chapter"],
-Cell[65497, 1489, 349, 6, 49, "Text"],
+Cell[66429, 1507, 201, 3, 65, "Chapter"],
+Cell[66633, 1512, 349, 6, 49, "Text"],
 Cell[CellGroupData[{
-Cell[65871, 1499, 169, 3, 64, "Section",
+Cell[67007, 1522, 169, 3, 64, "Section",
  CellID->1165495935],
 Cell[CellGroupData[{
-Cell[66065, 1506, 104, 1, 44, "Subsection"],
-Cell[66172, 1509, 153, 2, 30, "Text"],
-Cell[66328, 1513, 307, 8, 28, "Input",
+Cell[67201, 1529, 104, 1, 44, "Subsection"],
+Cell[67308, 1532, 153, 2, 30, "Text"],
+Cell[67464, 1536, 307, 8, 28, "Input",
  InitializationCell->True],
-Cell[66638, 1523, 222, 6, 28, "Input",
+Cell[67774, 1546, 222, 6, 28, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[66885, 1533, 110, 1, 28, "Input"],
-Cell[66998, 1536, 844, 13, 46, "Output"]
+Cell[68021, 1556, 110, 1, 28, "Input"],
+Cell[68134, 1559, 844, 13, 46, "Output"]
 }, Open  ]],
-Cell[67857, 1552, 92, 1, 28, "Input"]
+Cell[68993, 1575, 92, 1, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67986, 1558, 128, 1, 44, "Subsection"],
-Cell[68117, 1561, 362, 8, 30, "Text"],
+Cell[69122, 1581, 128, 1, 44, "Subsection"],
+Cell[69253, 1584, 362, 8, 30, "Text"],
 Cell[CellGroupData[{
-Cell[68504, 1573, 114, 1, 35, "Subsubsection"],
-Cell[68621, 1576, 357, 8, 28, "Input",
+Cell[69640, 1596, 114, 1, 35, "Subsubsection"],
+Cell[69757, 1599, 357, 8, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69015, 1589, 116, 1, 35, "Subsubsection"],
-Cell[69134, 1592, 2786, 67, 250, "Input",
+Cell[70151, 1612, 116, 1, 35, "Subsubsection"],
+Cell[70270, 1615, 2786, 67, 250, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71957, 1664, 165, 2, 35, "Subsubsection"],
-Cell[72125, 1668, 1661, 40, 182, "Input",
+Cell[73093, 1687, 165, 2, 35, "Subsubsection"],
+Cell[73261, 1691, 1661, 40, 182, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73823, 1713, 112, 1, 35, "Subsubsection"],
-Cell[73938, 1716, 374, 9, 46, "Input",
+Cell[74959, 1736, 112, 1, 35, "Subsubsection"],
+Cell[75074, 1739, 374, 9, 46, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[74349, 1730, 150, 2, 35, "Subsubsection"],
-Cell[74502, 1734, 184, 4, 30, "Text"],
-Cell[74689, 1740, 1659, 41, 216, "Input",
+Cell[75485, 1753, 150, 2, 35, "Subsubsection"],
+Cell[75638, 1757, 184, 4, 30, "Text"],
+Cell[75825, 1763, 1659, 41, 216, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76385, 1786, 164, 2, 35, "Subsubsection"],
-Cell[76552, 1790, 95, 1, 30, "Text"],
-Cell[76650, 1793, 404, 9, 28, "Input",
+Cell[77521, 1809, 164, 2, 35, "Subsubsection"],
+Cell[77688, 1813, 95, 1, 30, "Text"],
+Cell[77786, 1816, 404, 9, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77091, 1807, 209, 2, 35, "Subsubsection"],
-Cell[77303, 1811, 6236, 145, 624, "Input",
+Cell[78227, 1830, 209, 2, 35, "Subsubsection"],
+Cell[78439, 1834, 6236, 145, 624, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[83576, 1961, 110, 1, 35, "Subsubsection"],
-Cell[83689, 1964, 2107, 49, 284, "Input",
+Cell[84712, 1984, 110, 1, 35, "Subsubsection"],
+Cell[84825, 1987, 2107, 49, 284, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85833, 2018, 135, 1, 35, "Subsubsection"],
-Cell[85971, 2021, 3687, 86, 403, "Input",
+Cell[86969, 2041, 135, 1, 35, "Subsubsection"],
+Cell[87107, 2044, 3687, 86, 403, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[89695, 2112, 138, 1, 35, "Subsubsection"],
-Cell[89836, 2115, 270, 5, 30, "Text"],
-Cell[90109, 2122, 2197, 49, 250, "Input",
+Cell[90831, 2135, 138, 1, 35, "Subsubsection"],
+Cell[90972, 2138, 270, 5, 30, "Text"],
+Cell[91245, 2145, 2197, 49, 250, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[92343, 2176, 137, 1, 35, "Subsubsection"],
-Cell[92483, 2179, 525, 9, 28, "Input",
+Cell[93479, 2199, 137, 1, 35, "Subsubsection"],
+Cell[93619, 2202, 525, 9, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[93045, 2193, 131, 1, 35, "Subsubsection"],
-Cell[93179, 2196, 359, 7, 28, "Input",
+Cell[94181, 2216, 131, 1, 35, "Subsubsection"],
+Cell[94315, 2219, 359, 7, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[93575, 2208, 122, 1, 35, "Subsubsection"],
-Cell[93700, 2211, 2624, 68, 318, "Input",
+Cell[94711, 2231, 122, 1, 35, "Subsubsection"],
+Cell[94836, 2234, 2624, 68, 318, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[96361, 2284, 120, 1, 35, "Subsubsection"],
-Cell[96484, 2287, 769, 17, 46, "Input",
+Cell[97497, 2307, 120, 1, 35, "Subsubsection"],
+Cell[97620, 2310, 769, 17, 46, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[97290, 2309, 123, 1, 35, "Subsubsection"],
-Cell[97416, 2312, 1249, 31, 131, "Input",
+Cell[98426, 2332, 123, 1, 35, "Subsubsection"],
+Cell[98552, 2335, 1249, 31, 131, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[98702, 2348, 155, 2, 35, "Subsubsection"],
-Cell[98860, 2352, 1924, 48, 131, "Input",
+Cell[99838, 2371, 155, 2, 35, "Subsubsection"],
+Cell[99996, 2375, 1924, 48, 131, "Input",
  InitializationCell->True]
 }, Open  ]],
-Cell[100799, 2403, 137, 1, 35, "Subsubsection"],
+Cell[101935, 2426, 137, 1, 35, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[100961, 2408, 119, 1, 29, "Subsubsection"],
-Cell[101083, 2411, 101, 1, 30, "Text"]
+Cell[102097, 2431, 119, 1, 29, "Subsubsection"],
+Cell[102219, 2434, 101, 1, 30, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[101221, 2417, 103, 1, 35, "Subsubsection"],
-Cell[101327, 2420, 5936, 125, 318, "Input",
+Cell[102357, 2440, 103, 1, 35, "Subsubsection"],
+Cell[102463, 2443, 5936, 125, 318, "Input",
  InitializationCell->True],
-Cell[107266, 2547, 725, 15, 97, "Input",
+Cell[108402, 2570, 1034, 20, 114, "Input",
  InitializationCell->True],
-Cell[107994, 2564, 94, 1, 28, "Input"]
+Cell[109439, 2592, 94, 1, 28, "Input"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[108127, 2570, 214, 4, 64, "Section",
+Cell[109572, 2598, 214, 4, 64, "Section",
  CellID->738721222],
-Cell[108344, 2576, 153, 3, 50, "Section",
+Cell[109789, 2604, 153, 3, 50, "Section",
  CellID->34],
-Cell[108500, 2581, 213, 4, 50, "Section",
+Cell[109945, 2609, 213, 4, 50, "Section",
  CellID->1084614847],
-Cell[108716, 2587, 312, 5, 50, "Section",
+Cell[110161, 2615, 312, 5, 50, "Section",
  CellID->2065060364],
-Cell[109031, 2594, 262, 4, 50, "Section",
+Cell[110476, 2622, 262, 4, 50, "Section",
  CellID->1280537793],
-Cell[109296, 2600, 220, 4, 50, "Section",
+Cell[110741, 2628, 220, 4, 50, "Section",
  CellID->1986318581],
-Cell[109519, 2606, 170, 3, 50, "Section",
- CellID->1054874149]
+Cell[CellGroupData[{
+Cell[110986, 2636, 170, 3, 50, "Section",
+ CellID->1054874149],
+Cell[CellGroupData[{
+Cell[111181, 2643, 104, 1, 44, "Subsection"],
+Cell[111288, 2646, 201, 3, 30, "Text"],
+Cell[111492, 2651, 1043, 26, 46, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112572, 2682, 315, 4, 44, "Subsection"],
+Cell[112890, 2688, 117, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[113032, 2693, 105, 1, 35, "Subsubsection"],
+Cell[113140, 2696, 185, 4, 30, "Text"],
+Cell[113328, 2702, 1013, 18, 28, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114378, 2725, 164, 2, 35, "Subsubsection"],
+Cell[114545, 2729, 186, 2, 30, "Text"],
+Cell[114734, 2733, 251, 5, 28, "Input",
+ InitializationCell->True],
+Cell[114988, 2740, 254, 5, 30, "Text"],
+Cell[115245, 2747, 499, 11, 28, "Input",
+ InitializationCell->True],
+Cell[115747, 2760, 209, 3, 30, "Text"],
+Cell[115959, 2765, 656, 17, 46, "Input",
+ InitializationCell->True],
+Cell[116618, 2784, 202, 3, 30, "Text"],
+Cell[116823, 2789, 888, 17, 63, "Input",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117748, 2811, 214, 4, 35, "Subsubsection"],
+Cell[117965, 2817, 382, 7, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118384, 2829, 112, 1, 35, "Subsubsection"],
+Cell[118499, 2832, 249, 5, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118785, 2842, 122, 1, 35, "Subsubsection"],
+Cell[118910, 2845, 538, 11, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119485, 2861, 180, 4, 35, "Subsubsection"],
+Cell[119668, 2867, 227, 5, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119932, 2877, 145, 1, 35, "Subsubsection"],
+Cell[120080, 2880, 203, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[120320, 2888, 103, 1, 35, "Subsubsection"],
+Cell[120426, 2891, 4291, 79, 199, "Input",
+ InitializationCell->True],
+Cell[124720, 2972, 739, 14, 114, "Input",
+ InitializationCell->True],
+Cell[125462, 2988, 94, 1, 28, "Input"],
+Cell[125559, 2991, 92, 1, 28, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
