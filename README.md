@@ -64,6 +64,13 @@ https://<host>/privacy_API?IntendedActivities=Processing&SubjectCountry=Croatia&
 }
 ```
 
+## Regulations Currently Implemented
+
+1. EU General Data Protection Regulation (proposed, 2012 version)
+2. Children’s Online Privacy Protection Act (U.S.), 16 C.F.R. Part 312
+3. Video Privacy Protection Act of 1988 (U.S.), 18 U.S.C. 2710
+4. California "Shine the Light" Law (U.S.), Cal. Civil Code. § 1798.83
+
 ## Project Scope
 
 As described above, there's a lot of legal ground that this API can cover.  In general terms, the project scope is for the API to include:
