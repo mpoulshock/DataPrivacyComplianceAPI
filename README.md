@@ -118,7 +118,7 @@ Contributions are welcome and this project will be moderated in a spirit of resp
 
 The project is written in the [Wolfram Language](https://www.wolfram.com/language/) (formerly called Mathematica).  Admittedly, this is an offbeat language to use in an open source project.  However, it's a deep, broad, and beautiful language and I hope you'll take the opportunity to learn more about it.  It's a joy to use.
 
-You can use the Wolfram Language for free by [registering with Wolfram Research](https://user.wolfram.com/wolframid/registration/cloud).  Then you can upload the .nb [source code file](https://github.com/mpoulshock/DataPrivacyComplianceAPI/tree/master/Source) to the Wolfram cloud and tinker with it there.
+You can use the Wolfram Language for free by [registering with Wolfram Research](https://user.wolfram.com/wolframid/registration/cloud).  Then go to the [Wolfram Programming Cloud](http://www.wolframcloud.com/) and upload the .nb [source code file](https://github.com/mpoulshock/DataPrivacyComplianceAPI/tree/master/Source) (using the upload icon in the upper right hand corner of your Programming Cloud home screen).  Then you can tinker with the .nb file there.
 
 To view a PDF version of the source code, [look here](https://github.com/mpoulshock/DataPrivacyComplianceAPI/blob/master/Documentation/Data%20privacy%20compliance.pdf).  It's easier to read than the .nb file, which doesn't render well in Github.
 
